@@ -559,47 +559,6 @@ nav a[aria-current] {
   border-radius: 999px;
 }
 
-/* ---------- Scrolling services strip ---------- */
-.marquee {
-  background: var(--red);
-  color: #fff;
-  overflow: hidden;
-  padding: 12px 0;
-}
-
-.marquee-track {
-  display: flex;
-  width: max-content;
-  animation: marquee 40s linear infinite;
-}
-
-.marquee span {
-  font: 600 .95rem/1 var(--head);
-  text-transform: uppercase;
-  letter-spacing: .12em;
-  white-space: nowrap;
-  padding: 0 20px;
-}
-
-.marquee span::after {
-  content: '✦';
-  font-size: .8em;
-  opacity: .7;
-  margin-left: 40px;
-}
-
-@keyframes marquee {
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .marquee-track {
-    animation: none;
-  }
-}
-
 /* ---------- Sections ---------- */
 section {
   padding: var(--section) 0;
@@ -769,6 +728,11 @@ section {
   transition: transform .6s;
 }
 
+/* Portrait in a wide card: keep the whole head in view */
+.feature img.face {
+  object-position: 50% 2%;
+}
+
 .feature::after {
   content: '';
   position: absolute;
@@ -891,7 +855,7 @@ video {
 .about-hero {
   position: relative;
   overflow: hidden;
-  padding: clamp(56px, 9vw, 120px) 0 clamp(80px, 10vw, 140px);
+  padding: clamp(56px, 9vw, 120px) 0;  /* same as the other pages' headers */
 }
 
 .about-hero .wrap {
@@ -902,8 +866,8 @@ video {
 
 .about-hero img {
   width: 100%;
-  max-width: 440px;
-  aspect-ratio: 1/1;
+  max-width: 380px;
+  aspect-ratio: 4/3;
   object-fit: cover;
   border-radius: var(--radius);
   justify-self: end;
@@ -939,35 +903,6 @@ video {
 
 .hero-links a:hover {
   border-color: var(--red);
-}
-
-.scroll-cue {
-  position: absolute;
-  left: 50%;
-  bottom: 24px;
-  transform: translateX(-50%);
-  font-size: .72rem;
-  letter-spacing: .3em;
-  text-transform: uppercase;
-  color: var(--dark-muted);
-  text-decoration: none;
-  display: none;  /* shown from desktop up; on phones the hero photo sits where it would go */
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-}
-
-.scroll-cue::after {
-  content: '';
-  width: 1px;
-  height: 36px;
-  background: linear-gradient(var(--red), transparent);
-  animation: cue 1.8s ease-in-out infinite;
-}
-
-@keyframes cue {
-  0%, 100% { transform: scaleY(.4); transform-origin: top; }
-  50% { transform: scaleY(1); transform-origin: top; }
 }
 
 /* Numbered chapters: "02 About us" */
@@ -1680,7 +1615,7 @@ blockquote {
   }
 
   .info-strip .wrap {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr 1fr;
   }
 
   .tile-grid {
@@ -1768,10 +1703,6 @@ blockquote {
 
   .about-hero .wrap {
     grid-template-columns: 1.4fr 1fr;
-  }
-
-  .scroll-cue {
-    display: flex;
   }
 
   /* About chapters: number on the left, content on the right */

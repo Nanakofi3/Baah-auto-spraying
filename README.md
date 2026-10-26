@@ -32,7 +32,7 @@ The root `index.html` exists only because web hosts load `index.html` by default
 
 | Page         | Contents |
 |--------------|----------|
-| `home.html`     | Hero, scrolling services strip, first four services, four-step process, stats, gallery preview, contact strip |
+| `home.html`     | Hero, first four services, four-step process, stats, gallery preview, contact strip |
 | `services.html` | All seven services, four-step process, contact strip |
 | `gallery.html`  | Two tabs, Photos and Videos ("In motion"); `gallery.html#videos` opens the Videos tab. Items open in a lightbox (videos play there), then a call to action |
 | `about.html`   | Wordmark hero, then numbered chapters 01–09: about, founder, story, why choose us, vision, mission, numbers, values, visit |
