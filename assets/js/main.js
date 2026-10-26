@@ -164,7 +164,7 @@
       });
     });
 
-    // Open the tab named in the address (e.g. gallery.html#videos), else the first
+    // Open the tab named in the address (e.g. /gallery#videos), else the first
     var fromHash = tabs.filter(function (t) { return '#' + t.getAttribute('aria-controls') === location.hash; })[0];
     select(fromHash || tabs[0]);
   }
